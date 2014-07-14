@@ -101,6 +101,15 @@ else:
             print("\nWARNING: "+color.BOLD+color.UNDERLINE+str(err)+color.END)
             print("\nFor full documentation and help, use ["+color.BOLD+"-h"+color.END+', '+color.BOLD+"--help"+color.END+"] parameter\n\n")
             sys.exit(2)
+
+        try:
+            if (opts == []):
+                print("\n\nIt looks like you forgot to add some params...\n")
+                sys.exit(2)
+        except:
+            print("\nFor full documentation and help, use ["+color.BOLD+"-h"+color.END+', '+color.BOLD+"--help"+color.END+"] parameter\n\n")
+            sys.exit(2)
+            
         for code,param in opts:
             if code in ["-h","--help"]:
                 pathname = os.path.dirname(sys.argv[0])
@@ -130,4 +139,3 @@ else:
                     print("\n")
                     os.system("rm -f "+dir+"/CrawlerResultParsed")
                     os.system("rm -f "+dir+"/CrawlerResult")
-    
