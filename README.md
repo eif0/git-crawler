@@ -8,7 +8,7 @@ In order to __audit missconfigured repos__, and find someone's information leaks
 
 __git-crawler__ is an auditing tool that find and disclosure all the __email accounts__ related to a git project (both autor's mail and contributor's mail).
 
-It doesn't mind if you noticed about the leak and solved your configuration issue by pushing again with a _.mailmap_ file _(see [git-shortlog](http://git-scm.com/docs/git-shortlog) or [git-blame](http://git-scm.com/docs/git-blame))_ to replace your previously leaked email. It's too late!, git-crawler will find your leaked mail without hesitation!
+And the scary thing is that it doesn't mind if you noticed about the leak and solved your configuration issue by pushing again with a _.mailmap_ file to replace your previously leaked email _(see [git-shortlog](http://git-scm.com/docs/git-shortlog) or [git-blame](http://git-scm.com/docs/git-blame))_. It's too late!, git-crawler will find your leaked email address without hesitation!
 
 
 ####_git-crawler has two major ways of use:_
@@ -29,13 +29,13 @@ You can clone this repo with a simple:
 
 #### Usage
 
-_(example auditing [Xibalba](https://github.com/eif0/xibalba)'s leaked emails)_
+_- example auditing [Xibalba](https://github.com/eif0/xibalba)'s leaked emails -_
 
-In order to audit a __remote repo__:
-* ``python git-crawler.py -r https://github.com/eif0/xibalba.git``
+* In order to audit a __remote repo__:
+	* ``python git-crawler.py -r https://github.com/eif0/xibalba.git``
 
-In order to audit a __local repo__:
-* ``python git-crawler.py -l /path/to/xibalba`` 
+* In order to audit a __local repo__:
+	* ``python git-crawler.py -l /path/to/xibalba`` 
 
 
 ### Licensing
