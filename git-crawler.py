@@ -150,3 +150,4 @@ else:
                     else:
                         print("\n\n"+color.UNDERLINE+"WARNING:"+color.END+color.BOLD+" "+dir+color.END+" isn't a valid git repo dir!\n\n")
                         sys.exit(2)
+                        
