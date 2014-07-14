@@ -1,14 +1,15 @@
-## [git-crawler](https://github.com/eif0/git-crawler/) - Git Email Crawler, and Information Disclosure Tool
+## < [git-crawler](https://github.com/eif0/git-crawler/) >
+## Git email Crawler, and Information Disclosure Tool
 
-Many times amateur git users (and also experienced users too) make some mistakes while commiting/pulling/merging from different workstations and some private information become public without the programmer's will.
+Many times amateur git users (and sadly some experienced users too) make mistakes while commiting/pulling/merging from different workstations and some private information become public without the programmer's will.
 
-Also, sometimes new github/bitbucket/gitcloud/whatever users quite often use to think that ther emails accounts remain private/hidden if they don't put them in their public profile.
+Also, quite often new github/bitbucket/gitcloud/whatever users use to think that ther emails accounts remain private/hidden if they don't publish them in their public profile.
 
-In order to audit missconfigured repos and leak someone's find information leaks I created git-crawler.
+In order to __audit missconfigured repos__, and find someone's information leaks I created git-crawler.
 
-git-crawler is an auditing tool that find and disclosure all the email accounts related to a git project (both autor's mail and contributor's mail).
+__git-crawler__ is an auditing tool that find and disclosure all the __email accounts__ related to a git project (both autor's mail and contributor's mail).
 
-It doesn't mind if you noticed about the leak and solved your configuration issue by pushing again with a _.mailmap_ file (see [git-shortlog](http://git-scm.com/docs/git-shortlog) or [git-blame](http://git-scm.com/docs/git-blame) refs) to replace your previously leaked email. It's too late!, git-crawler will find your leaked mail without hesitation!
+It doesn't mind if you noticed about the leak and solved your configuration issue by pushing again with a _.mailmap_ file _(see [git-shortlog](http://git-scm.com/docs/git-shortlog) or [git-blame](http://git-scm.com/docs/git-blame))_ to replace your previously leaked email. It's too late!, git-crawler will find your leaked mail without hesitation!
 
 
 ####_git-crawler has two major ways of use:_
@@ -27,11 +28,11 @@ The app is written in pure Python2 (migration to Python3 is planned for the futu
 You can clone this repo with a simple:
 ``$ git clone https://github.com/eif0/git-crawler.git``
 
-In order to audit a remote repo:
-* ``python git-crawler.py -r https://github.com/eif0/xibalba.git`` (example auditing [Xibalba](https://github.com/eif0/xibalba)'s leaked emails)
+In order to audit a __remote repo__ _(example auditing [Xibalba](https://github.com/eif0/xibalba)'s leaked emails)_:
+* ``python git-crawler.py -r https://github.com/eif0/xibalba.git``
 
-In order to audit a local repo:
-* ``python git-crawler.py -l /usr/shared/xibalba`` (example auditing [Xibalba](https://github.com/eif0/xibalba)'s leaked emails)
+In order to audit a __local repo__ _(example auditing [Xibalba](https://github.com/eif0/xibalba)'s leaked emails)_:
+* ``python git-crawler.py -l /usr/shared/xibalba`` 
 
 
 ### Licensing
