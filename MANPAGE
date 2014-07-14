@@ -1,0 +1,44 @@
+.TH "git-crawler" "1" "July 14, 2014" " 0.1.3" "Networking Tools"
+.SH "NAME"
+git-crawler \(em Git Email Crawler, and Information Disclosure Tool
+.SH "MODES"
+.IP "\fB""Remote Repo"" mode:\fP"
+Find email leaks within a remote repo not abailable locally (works great both with public and private repos).
+.IP "\fB""Local Repo"" mode:\fP"
+Find email leaks within a local repo downloaded at your workstation.
+.SH "OPTIONS"
+.IP "\fB-r\fP \fISTRING\fP, \fB--remote=\fP\fISTRING\fP"
+Set the remote git repo to be audited (.git url)
+.IP "\fB-l\fP \fISTRING\fP, \fB--local=\fP\fISTRING\fP"
+Set the local git repo to be audited (path)
+.br
+.IP "\fB-h\fP, \fB--help\fP"
+Show this help.
+
+
+.SH "USE EXAMPLE"
+.PP
+.IP "$ python git-crawler.py -r https://github.com/eif0/xibalba.git"
+Audit eif0/xibalba's repo (remotely from GitHub) and search for leaked emails.
+
+.IP "$ python git-crawler.py -l /path/to/MyClonedProject"
+Audit MyClonedProject's repo (stored locally) and search for leaked emails.
+
+.IP "$ python git-crawler.py --help"
+Show this help.
+
+.SH "AUTHOR"
+.PP
+Written by eif0.
+
+.SH "BUG REPORTING"
+Report git-crawler bugs to \fBeif0@hush.com\fP 
+.br
+Also you can submit bugs to our \fBissue tracker\fP [\fIhttps://github.com/eif0/git-crawler/issues\fP]
+
+.SH "DONATIONS"
+.IP "If you like this project and find it useful you can buy me a beer"
+\fBBitCoin:\fP 12toiKBQG8NukypFSd5qKvWCp1rtoPqyur
+.br
+\fBLiteCoin:\fP LXtAKuXqCKWD6AWnGqZ6iw7HduqCgsXMhR
+

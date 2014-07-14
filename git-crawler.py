@@ -36,6 +36,7 @@ else:
         import subprocess
         import datetime
         import random
+        import os.path
 
     except:
         e = sys.exc_info()[1]
@@ -43,6 +44,30 @@ else:
         print("\n\nPlease check git-crawler's python modules deps and install the one missing in your system:\n\n  - subprocess\n  - os\n  - sys\n  - random\n  - datetime\n  - getopt\n\n")
         sys.exit(2)
     
+
+    def which(program):
+        def is_exe(fpath):
+            return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
+
+        fpath, fname = os.path.split(program)
+        if fpath:
+            if is_exe(program):
+                return program
+        else:
+            for path in os.environ["PATH"].split(os.pathsep):
+                path = path.strip('"')
+                exe_file = os.path.join(path, program)
+                if is_exe(exe_file):
+                    return exe_file
+        return None
+
+    alldeps = ["python2", "man", "git"]
+    for dep in alldeps:
+        if (which(dep) == None):
+            print("\n\nWARNING: Xibalba needs '"+color.BOLD+dep+color.END+"' to be installed in your system.\n\nPlease install '"+color.BOLD+dep+color.END+"' and try to run Xibalba again.\n\n")
+            sys.exit(2)
+
+
 
 
     def CloneRepo(repo=None):
@@ -78,7 +103,9 @@ else:
             sys.exit(2)
         for code,param in opts:
             if code in ["-h","--help"]:
-                print("HELP NOT AVAILABLE YET")
+                pathname = os.path.dirname(sys.argv[0])
+                os.system("man "+os.path.abspath(pathname)+"/MANPAGE")
+                sys.exit(2)
             else:
                 if code in ["-r","--remote"]:
                     dir = CloneRepo(param)

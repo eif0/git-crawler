@@ -27,6 +27,9 @@ The app is written in pure Python2 (migration to Python3 is planned for the futu
 You can clone this repo with a simple:
 ``$ git clone https://github.com/eif0/git-crawler.git``
 
+You can also download a bundle with all Xibalba's sources from [here](https://github.com/eif0/git-crawler/archive/master.zip).
+
+
 #### Usage
 
 _- example auditing [Xibalba](https://github.com/eif0/xibalba)'s leaked emails -_
