@@ -118,24 +118,35 @@ else:
             else:
                 if code in ["-r","--remote"]:
                     dir = CloneRepo(param)
-                    mails = MailCrawler(dir)
-                    print("\n")
-                    cant = 0
-                    for m in mails:
-                        print("mail found: "+color.BOLD+color.UNDERLINE+m+color.END)
-                        cant = cant+1
-                    print("\n"+color.BOLD+color.UNDERLINE+"RESULT:"+color.END+" "+str(cant)+" mail(s) found!")
-                    print("\n")                    
-                    RemoveRepo(dir)
+                    if (os.path.isfile(dir+"/.git")):
+                        mails = MailCrawler(dir)
+                        print("\n")
+                        cant = 0
+                        for m in mails:
+                            print("mail found: "+color.BOLD+color.UNDERLINE+m+color.END)
+                            cant = cant+1
+                        print("\n"+color.BOLD+color.UNDERLINE+"RESULT:"+color.END+" "+str(cant)+" mail(s) found!")
+                        print("\n")                    
+                        RemoveRepo(dir)
+                    else:
+                        print("\n\n"+color.UNDERLINE+"WARNING:"+color.END+color.BOLD+" "+param+color.END+" isn't a valid git repo url!\n\n")
+                        sys.exit(2)
+                        
+                        
                 elif code in ["-l","--local"]:
                     dir = param
-                    mails = MailCrawler(dir)
-                    print("\n")
-                    cant = 0
-                    for m in mails:
-                        print("mail found: "+color.BOLD+color.UNDERLINE+m+color.END)
-                        cant = cant+1
-                    print("\n"+color.BOLD+color.UNDERLINE+"RESULT:"+color.END+" "+str(cant)+" mail(s) found!")
-                    print("\n")
-                    os.system("rm -f "+dir+"/CrawlerResultParsed")
-                    os.system("rm -f "+dir+"/CrawlerResult")
+
+                    if (os.path.isfile(dir+"/.git")):
+                        mails = MailCrawler(dir)
+                        print("\n")
+                        cant = 0
+                        for m in mails:
+                            print("mail found: "+color.BOLD+color.UNDERLINE+m+color.END)
+                            cant = cant+1
+                        print("\n"+color.BOLD+color.UNDERLINE+"RESULT:"+color.END+" "+str(cant)+" mail(s) found!")
+                        print("\n")
+                        os.system("rm -f "+dir+"/CrawlerResultParsed")
+                        os.system("rm -f "+dir+"/CrawlerResult")
+                    else:
+                        print("\n\n"+color.UNDERLINE+"WARNING:"+color.END+color.BOLD+" "+dir+color.END+" isn't a valid git repo dir!\n\n")
+                        sys.exit(2)

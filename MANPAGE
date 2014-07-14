@@ -3,7 +3,7 @@
 git-crawler \(em Git Email Crawler, and Information Disclosure Tool
 .SH "MODES"
 .IP "\fB""Remote Repo"" mode:\fP"
-Find email leaks within a remote repo not abailable locally (works great both with public and private repos).
+Find email leaks within a remote repo not available locally (works great both with public and private repos).
 .IP "\fB""Local Repo"" mode:\fP"
 Find email leaks within a local repo downloaded at your workstation.
 .SH "OPTIONS"
