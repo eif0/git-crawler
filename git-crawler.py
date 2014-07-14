@@ -88,7 +88,7 @@ else:
                     for m in mails:
                         print("mail found: "+color.BOLD+color.UNDERLINE+m+color.END)
                         cant = cant+1
-                    print("\n"+color.BOLD+color.UNDERLINE+"RESULT:"+color.END+" "+str(cant)+" mails found!")
+                    print("\n"+color.BOLD+color.UNDERLINE+"RESULT:"+color.END+" "+str(cant)+" mail(s) found!")
                     print("\n")                    
                     RemoveRepo(dir)
                 elif code in ["-l","--local"]:
@@ -99,7 +99,7 @@ else:
                     for m in mails:
                         print("mail found: "+color.BOLD+color.UNDERLINE+m+color.END)
                         cant = cant+1
-                    print("\n"+color.BOLD+color.UNDERLINE+"RESULT:"+color.END+" "+str(cant)+" mails found!")
+                    print("\n"+color.BOLD+color.UNDERLINE+"RESULT:"+color.END+" "+str(cant)+" mail(s) found!")
                     print("\n")
                     os.system("rm -f "+dir+"/CrawlerResultParsed")
                     os.system("rm -f "+dir+"/CrawlerResult")
