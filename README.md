@@ -22,12 +22,12 @@ And the scary thing is that it doesn't mind if you noticed about the leak and so
 The app is written in pure Python2 (migration to Python3 is planned for the future). 
 
 
-### Running locally
+### Running Locally
 
 You can clone this repo with a simple:
 ``$ git clone https://github.com/eif0/git-crawler.git``
 
-You can also download a bundle with all Xibalba's sources from [here](https://github.com/eif0/git-crawler/archive/master.zip).
+You can also download a bundle with all git-crawler's sources from [here](https://github.com/eif0/git-crawler/archive/master.zip).
 
 
 #### Usage
@@ -35,10 +35,10 @@ You can also download a bundle with all Xibalba's sources from [here](https://gi
 _- example auditing [Xibalba](https://github.com/eif0/xibalba)'s leaked emails -_
 
 * In order to audit a __remote repo__:
-	* ``python git-crawler.py -r https://github.com/eif0/xibalba.git``
+	* ``$ python git-crawler.py -r https://github.com/eif0/xibalba.git``
 
 * In order to audit a __local repo__:
-	* ``python git-crawler.py -l /path/to/xibalba`` 
+	* ``$ python git-crawler.py -l /path/to/xibalba`` 
 
 
 ### Licensing
