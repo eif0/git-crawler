@@ -1,9 +1,8 @@
-## < [git-crawler](https://github.com/eif0/git-crawler/) >
-## Git email Crawler, and Information Disclosure Tool
+## [git-crawler](https://github.com/eif0/git-crawler/) - Git email Crawler, and Information Disclosure Tool
 
 Many times amateur git users (and sadly some experienced users too) make mistakes while commiting/pulling/merging from different workstations and some private information become public without the programmer's will.
 
-Also, quite often new github/bitbucket/gitcloud/whatever users use to think that ther emails accounts remain private/hidden if they don't publish them in their public profile.
+Also, quite often new github/bitbucket/gitcloud/whatever users use to think that their emails accounts remain private/hidden if they don't publish them in their public profile.
 
 In order to __audit missconfigured repos__, and find someone's information leaks I created git-crawler.
 
@@ -15,7 +14,7 @@ It doesn't mind if you noticed about the leak and solved your configuration issu
 ####_git-crawler has two major ways of use:_
 * __"Remote Repo"__ mode: Find email leaks within a remote repo not abailable locally (works great both with public and private repos).
 
-* __"Local Repo"__ mode: Find email leaks within a local repo downloaded in your workstation.
+* __"Local Repo"__ mode: Find email leaks within a local repo downloaded at your workstation.
 
 
 ## Technical details
@@ -28,11 +27,15 @@ The app is written in pure Python2 (migration to Python3 is planned for the futu
 You can clone this repo with a simple:
 ``$ git clone https://github.com/eif0/git-crawler.git``
 
-In order to audit a __remote repo__ _(example auditing [Xibalba](https://github.com/eif0/xibalba)'s leaked emails)_:
+#### Usage
+
+_(example auditing [Xibalba](https://github.com/eif0/xibalba)'s leaked emails)_
+
+In order to audit a __remote repo__:
 * ``python git-crawler.py -r https://github.com/eif0/xibalba.git``
 
-In order to audit a __local repo__ _(example auditing [Xibalba](https://github.com/eif0/xibalba)'s leaked emails)_:
-* ``python git-crawler.py -l /usr/shared/xibalba`` 
+In order to audit a __local repo__:
+* ``python git-crawler.py -l /path/to/xibalba`` 
 
 
 ### Licensing
