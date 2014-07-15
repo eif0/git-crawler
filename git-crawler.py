@@ -118,7 +118,7 @@ else:
             else:
                 if code in ["-r","--remote"]:
                     dir = CloneRepo(param)
-                    if (os.path.isfile(dir+"/.git")):
+                    if (os.path.isfile(dir+"/.git/HEAD")):
                         mails = MailCrawler(dir)
                         print("\n")
                         cant = 0
@@ -136,7 +136,7 @@ else:
                 elif code in ["-l","--local"]:
                     dir = param
 
-                    if (os.path.isfile(dir+"/.git")):
+                    if (os.path.isfile(dir+"/.git/HEAD")):
                         mails = MailCrawler(dir)
                         print("\n")
                         cant = 0
